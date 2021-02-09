@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -10,6 +11,7 @@ import {PostMovieComponent} from './post-movie/post-movie.component';
 import {PatchMovieComponent} from './patch-movie/patch-movie.component';
 import {DeleteMovieComponent} from './delete-movie/delete-movie.component';
 import {GetMovieByIdComponent} from './get-movie-by-id/get-movie-by-id.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import {GetMovieByIdComponent} from './get-movie-by-id/get-movie-by-id.component
       {path: 'get-movies', component: GetMoviesComponent},
       {path: 'add-movie', component: PostMovieComponent},
     ]),
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

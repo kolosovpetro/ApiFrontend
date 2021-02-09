@@ -6,7 +6,8 @@
 
 <div class="container">
   <h1>List of Movies</h1>
-  <table class="table">
+  <button class="btn btn-primary">Create</button>
+  <table class="table" style="margin-top: 20px">
     <thead>
     <tr>
       <th scope="col">Id</th>
@@ -20,13 +21,17 @@
     </thead>
     <tbody>
     <tr *ngFor="let movie of moviesList">
-      <th>{{movie.id}}</th>
+      <th>{{movie.movieId}}</th>
       <td>{{movie.title}}</td>
       <td>{{movie.year}}</td>
       <td>{{movie.ageRestriction}}</td>
       <td>{{movie.price}}</td>
-      <td><button class="btn btn-primary">Update</button></td>
-      <td><button class="btn btn-danger">Delete</button></td>
+      <td>
+        <button class="btn btn-primary">Update</button>
+      </td>
+      <td>
+        <button class="btn btn-danger">Delete</button>
+      </td>
     </tr>
     </tbody>
   </table>

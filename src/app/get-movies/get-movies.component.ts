@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Movies} from '../models/movies';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-get-movies',
@@ -7,24 +8,14 @@ import {Movies} from '../models/movies';
   styleUrls: ['./get-movies.component.css']
 })
 export class GetMoviesComponent implements OnInit {
-  moviesList: Movies[] = [
-    new Movies(1, 'Lord of the rings', 2003, 12, 10.2),
-    new Movies(2, 'Shrek', 2005, 6, 12),
-    new Movies(3, 'King Kong', 2002, 12, 14),
-  ];
+  moviesList: Movies[];
 
-  constructor() {
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit(): void {
+    this.apiService.getMoviesList().subscribe((data: Movies[]) => {
+      this.moviesList = data;
+    });
   }
-
-  addNewMovie(): void {
-    this.moviesList.push(new Movies(this.moviesList.length + 1, 'King Kong', 2002, 12, 14));
-  }
-
-  popMovie(): void {
-    this.moviesList.pop();
-  }
-
 }
