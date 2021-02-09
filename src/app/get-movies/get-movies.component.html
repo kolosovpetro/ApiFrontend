@@ -1,6 +1,33 @@
-<p>get-movies works!</p>
-<ul>
-  <li><a [routerLink]="['/get-movie-by-id', 1]">Movie 1</a></li>
-  <li><a [routerLink]="['/get-movie-by-id', 2]">Movie 2</a></li>
-  <li><a [routerLink]="['/get-movie-by-id', 3]">Movie 3</a></li>
-</ul>
+<!--<ul *ngFor="let movie of moviesList">-->
+<!--  <li>{{movie.title}}</li>-->
+<!--</ul>-->
+<!--<button class="btn btn-primary" (click)="addNewMovie()">Push movie</button>-->
+<!--<button class="btn btn-danger" (click)="popMovie()">Pop movie</button>-->
+
+<div class="container">
+  <h1>List of Movies</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Title</th>
+      <th scope="col">Year</th>
+      <th scope="col">Age Restrict.</th>
+      <th scope="col">Price</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let movie of moviesList">
+      <th>{{movie.id}}</th>
+      <td>{{movie.title}}</td>
+      <td>{{movie.year}}</td>
+      <td>{{movie.ageRestriction}}</td>
+      <td>{{movie.price}}</td>
+      <td><button class="btn btn-primary">Update</button></td>
+      <td><button class="btn btn-danger">Delete</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

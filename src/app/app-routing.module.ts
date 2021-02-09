@@ -3,9 +3,11 @@ import {RouterModule, Routes} from '@angular/router';
 import {GetMovieByIdComponent} from './get-movie-by-id/get-movie-by-id.component';
 import {PatchMovieComponent} from './patch-movie/patch-movie.component';
 import {DeleteMovieComponent} from './delete-movie/delete-movie.component';
+import {PostMovieComponent} from './post-movie/post-movie.component';
 
 const routes: Routes = [
   {path: 'get-movie-by-id/:id', component: GetMovieByIdComponent},
+  {path: 'post-movie', component: PostMovieComponent},
   {path: 'update-movie/:id', component: PatchMovieComponent},
   {path: 'delete-movie/:id', component: DeleteMovieComponent},
 ];
