@@ -6,7 +6,8 @@ import {PostMovieDto} from './dto/post-movie-dto';
 import {IPostResponse} from './models/post-response';
 import {DeleteResponse} from './models/delete-response';
 import {PatchMovieDto} from './dto/patch-movie-dto';
-import {IPatchResponse} from './models/patch-response';
+import {PatchResponse} from './models/patch-response';
+import {catchError, retry} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -33,7 +34,7 @@ export class ApiService {
     return this.httpClient.delete<DeleteResponse>(`${this.apiUrl}/${id}`);
   }
 
-  patchMovie(dto: PatchMovieDto): Observable<IPatchResponse> {
-    return this.httpClient.patch<IPatchResponse>(this.apiUrl, dto);
+  patchMovie(dto: PatchMovieDto): Observable<PatchResponse> {
+    return this.httpClient.patch<PatchResponse>(this.apiUrl, dto);
   }
 }
