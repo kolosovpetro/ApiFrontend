@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../api.service';
 import {PostMovieDto} from '../dto/post-movie-dto';
+import {IPostResponse} from '../models/post-response';
 
 @Component({
   selector: 'app-post-movie',
@@ -9,7 +10,8 @@ import {PostMovieDto} from '../dto/post-movie-dto';
 })
 export class PostMovieComponent implements OnInit {
   currentDto: PostMovieDto;
-  response: any;
+  response: IPostResponse;
+  display = 'none';
 
   constructor(private apiService: ApiService) {
   }
@@ -19,8 +21,9 @@ export class PostMovieComponent implements OnInit {
   }
 
   postMovie(): void {
-    this.apiService.postMovie(this.currentDto).subscribe((data: any) => {
+    this.apiService.postMovie(this.currentDto).subscribe((data: IPostResponse) => {
       this.response = data;
+      this.display = 'block';
     });
   }
 }

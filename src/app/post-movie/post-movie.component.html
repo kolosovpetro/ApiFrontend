@@ -19,5 +19,10 @@
              placeholder="Enter movie price">
     </div>
     <button class="btn btn-primary" (click)="postMovie()">Create</button>
+    <div style="margin-top: 20px">
+      <div class="alert alert-primary" role="alert" [style.display]="display">
+        {{response.message}} {{response.statusCode}}
+      </div>
+    </div>
   </div>
 </div>

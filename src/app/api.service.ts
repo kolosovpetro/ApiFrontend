@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Movies} from './models/movies';
 import {PostMovieDto} from './dto/post-movie-dto';
+import {IPostResponse} from './models/post-response';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,7 @@ export class ApiService {
     return this.httpClient.get<Movies[]>(this.apiUrl);
   }
 
-  postMovie(dto: PostMovieDto): Observable<any> {
-    return this.httpClient.post<any>(this.apiUrl, dto);
+  postMovie(dto: PostMovieDto): Observable<IPostResponse> {
+    return this.httpClient.post<IPostResponse>(this.apiUrl, dto);
   }
 }
