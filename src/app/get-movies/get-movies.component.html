@@ -22,13 +22,13 @@
       <td>{{movie.ageRestriction}}</td>
       <td>{{movie.price}}</td>
       <td>
-        <button class="btn btn-primary" routerLink="/get-movie-by-id/{{movie.movieId}}">Details</button>
+        <a class="btn btn-primary" routerLink="/get-movie-by-id/{{movie.movieId}}">Details</a>
       </td>
       <td>
-        <button class="btn btn-primary" routerLink="/update-movie/{{movie.movieId}}">Update</button>
+        <a class="btn btn-primary" routerLink="/update-movie/{{movie.movieId}}">Update</a>
       </td>
       <td>
-        <button class="btn btn-danger" routerLink="/delete-movie/{{movie.movieId}}">Delete</button>
+        <a class="btn btn-danger" routerLink="/delete-movie/{{movie.movieId}}">Delete</a>
       </td>
     </tr>
     </tbody>
