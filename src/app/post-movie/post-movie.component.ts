@@ -11,7 +11,7 @@ import {IPostResponse} from '../models/post-response';
 export class PostMovieComponent implements OnInit {
   currentDto: PostMovieDto;
   response: IPostResponse;
-  display = 'block';
+  display = 'none';
 
   constructor(private apiService: ApiService) {
   }

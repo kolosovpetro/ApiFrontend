@@ -21,10 +21,10 @@
     <p>Are you sure you want to delete movie?</p>
     <div style="display: flex; justify-content: space-between; width: 180px">
       <div>
-        <button class="btn btn-danger">Delete</button>
+        <button class="btn btn-danger" (click)="delete()">Delete</button>
       </div>
       <div>
-        <button class="btn btn-primary">Cancel</button>
+        <button class="btn btn-primary" routerLink="/get-movies">Cancel</button>
       </div>
     </div>
   </div>

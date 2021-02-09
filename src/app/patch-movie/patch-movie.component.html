@@ -1,1 +1,33 @@
-<p>patch-movie works!</p>
+<div class="container">
+  <h1>Update Movie</h1>
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input [(ngModel)]="currentDto.title" type="text" class="form-control" id="title" aria-describedby="emailHelp"
+           placeholder="Enter movie title">
+
+    <label for="year">Year</label>
+    <input [(ngModel)]="currentDto.year" type="number" class="form-control" id="year"
+           placeholder="Enter movie year">
+
+    <label for="ageRestriction">Age Restriction</label>
+    <input [(ngModel)]="currentDto.ageRestriction" type="number" class="form-control" id="ageRestriction"
+           placeholder="Enter movie age restriction">
+
+    <label for="price">Price</label>
+    <input [(ngModel)]="currentDto.price" type="number" step="0.1" class="form-control" id="price"
+           placeholder="Enter movie price">
+  </div>
+  <div style="display: flex; justify-content: space-between; width: 180px">
+    <div>
+      <button class="btn btn-primary" (click)="patchMovie()">Update</button>
+    </div>
+    <div>
+      <button class="btn btn-primary" routerLink="/get-movies">Cancel</button>
+    </div>
+  </div>
+  <div style="margin-top: 20px">
+    <div class="alert alert-primary" role="alert" [style.display]="display">
+      <p>{{response.message}} {{response.statusCode}}</p>
+    </div>
+  </div>
+</div>

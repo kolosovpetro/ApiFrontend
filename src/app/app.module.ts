@@ -12,6 +12,7 @@ import {PatchMovieComponent} from './patch-movie/patch-movie.component';
 import {DeleteMovieComponent} from './delete-movie/delete-movie.component';
 import {GetMovieByIdComponent} from './get-movie-by-id/get-movie-by-id.component';
 import {FormsModule} from '@angular/forms';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -21,13 +22,16 @@ import {FormsModule} from '@angular/forms';
     PostMovieComponent,
     PatchMovieComponent,
     DeleteMovieComponent,
-    GetMovieByIdComponent
+    GetMovieByIdComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: 'get-movies', component: GetMoviesComponent},
+      {path: '', redirectTo: '/get-movies', pathMatch: 'full'},
       {path: 'add-movie', component: PostMovieComponent},
+      {path: '**', component: PageNotFoundComponent},
     ]),
     HttpClientModule,
     AppRoutingModule,
