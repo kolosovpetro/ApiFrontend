@@ -18,6 +18,10 @@ export class ApiService {
     return this.httpClient.get<Movies[]>(this.apiUrl);
   }
 
+  getMovieById(id: string): Observable<Movies> {
+    return this.httpClient.get<Movies>(`${this.apiUrl}/${id}`);
+  }
+
   postMovie(dto: PostMovieDto): Observable<IPostResponse> {
     return this.httpClient.post<IPostResponse>(this.apiUrl, dto);
   }
